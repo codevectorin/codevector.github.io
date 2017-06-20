@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Megrim');
+.brand-block{
+
+}
+.brand-icon{
+	font-family: 'Megrim', cursive;
+	padding:6px;
+	border-radius: 50%;
+	
+	background-color: #1de9b6;
+	color: white;
+}
+.brand-text{
+	
+}
