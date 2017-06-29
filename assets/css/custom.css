@@ -98,6 +98,11 @@ section#some-features .card-image{
 section#some-features .card-image .image img{
 	max-height: 700px;
 }
+@media screen and (max-width:768px) {
+	section#some-features .card-image{
+		display: none
+	}
+}
 .content-piece{
 	margin-bottom: 30px;
 }
