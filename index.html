@@ -2,12 +2,17 @@
 <html>
     <head>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
             <title>
                 CodeVector.In :: Not everyone who wander is lost.
             </title>
             <link href="https://fonts.googleapis.com/css?family=Dosis|Montserrat|Open+Sans|Raleway" rel="stylesheet">
             <link href="./assets/css/bulma.min.css" rel="stylesheet" type="text/css">
             <link href="./assets/css/custom.css" rel="stylesheet" type="text/css">
+            <link href="./assets/css/animate.css" rel="stylesheet" type="text/css">
+            <noscript>
+                <style>.invisible { opacity: 1; }</style>
+            </noscript>
             <link href="/favicon.ico?v=4" rel="shortcut icon" type="image/x-icon">
             <link href="/favicon.ico?v=4" rel="icon" type="image/x-icon">
                            
@@ -31,7 +36,7 @@
                             </a>
                         </div>
                         <div class="nav-right">
-                            <a class="nav-item contact-link">
+                            <a class="nav-item contact-link" data-animate data-animation-classes="animated bounce" data-animation-delay="1000">
                                 <figure class="image is-16x16">
                                     <img src="/assets/img/say-hi.png"/>
                                 </figure>
@@ -90,12 +95,12 @@
                             <h2 class="subtitle">
                                 Make Your New Website Stand Out
                             </h2>
-                            <div class="hashtag">
+                            <div class="hashtag" data-animate data-animation-classes="animated pulse">
                                 <span class="hash">#Switch</span><span class="middle">To</span><span class="end">Vector</span>
                             </div>
                         </div>
                         <div class="column">
-                            <figure class="image" style="height: 60vh; width: 30vh; margin: 0px auto">
+                            <figure class="image" style="height: 60vh; width: 30vh; margin: 0px auto" data-animate data-animation-classes="animated pulse">
                                 <img src="/assets/img/mockup-1.png"/>
                             </figure>
                         </div>
@@ -104,7 +109,7 @@
             </div>
         </section>
         <section class="section" id="about-us">
-            <div class="container has-text-centered">
+            <div class="container has-text-centered invisible" data-animate data-animation-classes="animated fadeIn" data-animation-delay="500">
                 <h2 class="title">
                     About Codevector
                 </h1>
@@ -125,11 +130,10 @@
         <section class="section" id="some-features">
             <div class="container">
                 <div class="columns">
-                        <div class="column is-half card content-card">
+                        <div class="column is-half card content-card invisible" data-animate data-animation-classes="animated fadeIn" data-animation-offset="0.5, 0.5">
                           <div class="card-content">
                               <div class="content-piece">
-                                <p>
-                                text telling responsive is awesome and easy for all users and everything</p>
+                                <p>text telling responsive is awesome and easy for all users and everything</p>
                                 <div class="hashtag ht-sm">
                                   <span class="hash">#Switch</span><span class="middle">To</span><span class="end">Responsive</span>
                                 </div>
@@ -164,7 +168,7 @@
                               </div>
                           </div>
                         </div>
-                        <div class="column is-half card-image">
+                        <div class="column is-half card-image invisible" data-animate data-animation-classes="animated fadeIn" data-animation-offset="0.6, 0.5">
                           <figure class="image">
                             <img src="http://www.lucideus.com/safe/img/speed.jpg">
                           </figure>
@@ -261,7 +265,30 @@
                 </div>
             </div>
         </footer>
-        <script src="assets/js/bulma.js">
-        </script>
+        <script src="assets/js/bulma.js"></script>
+        <script src="assets/js/animate.js"></script>
+        <script>
+        var animate = new Animate({
+            target: '[data-animate]',
+            animatedClass: 'visible',
+            offset: [0.5, 0.5],
+            delay: 0,
+            remove: false,
+            reverse: false,
+            scrolled: false,
+            debug: false,
+            onLoad: true,
+            onScroll: true,
+            onResize: false,
+            callbackOnInit: function() {
+                console.log('Initialised');
+            },
+            callbackOnAnimate: function(element) {
+                console.log(element);
+            }
+        });
+
+        animate.init();
+    </script>
     </body>
 </html>
